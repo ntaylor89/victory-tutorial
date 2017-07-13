@@ -49,7 +49,9 @@ class Main extends Component {
           // tickFormat specifies how ticks should be displayed
           tickFormat={(x) => (`$${x / 1000}k`)}
         />
-        <VictoryStack>
+        <VictoryStack
+          colorScale={'warm'}
+        >
           <VictoryBar
             data={data2012}
             x='quarter'
