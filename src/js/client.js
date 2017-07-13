@@ -14,8 +14,8 @@ class Main extends Component {
   render () {
     return (
       <VictoryChart
-        // domainPadding will add space to each side of VictoryBar to
-        // prevent it from overlapping the axis
+        // adding the material theme provided with Victory
+        theme={VictoryTheme.material}
         domainPadding={20}
       >
         <VictoryAxis
