@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { VictoryBar } from 'victory'
+import { VictoryBar, VictoryChart } from 'victory'
 
 const data = [
   { quarter: 1, earnings: 13000 },
@@ -12,12 +12,14 @@ const data = [
 class Main extends Component {
   render () {
     return (
-     <VictoryBar
-       data={data}
-       // data accessor for x & y values
-       x='quarter'
-       y='earnings'
-      />
+      <VictoryChart>
+        <VictoryBar
+          data={data}
+          // data accessor for x & y values
+          x='quarter'
+          y='earnings'
+        />
+      </VictoryChart>
     )
   }
 }
