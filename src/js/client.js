@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { VictoryBar, VictoryChart } from 'victory'
+import { VictoryBar, VictoryChart, VictoryAxis,
+         VictoryTheme } from 'victory'
 
 const data = [
   { quarter: 1, earnings: 13000 },
@@ -12,7 +13,22 @@ const data = [
 class Main extends Component {
   render () {
     return (
-      <VictoryChart>
+      <VictoryChart
+        // domainPadding will add space to each side of VictoryBar to
+        // prevent it from overlapping the axis
+        domainPadding={20}
+      >
+        <VictoryAxis
+          // tickValues specifies both the number of ticks and where
+          // they are places on the axis
+          tickValues={[1, 2, 3, 4]}
+          tickFormat={['Quarter 1', 'Quarter 2', 'Quarter 3', 'Quarter 4']}
+        />
+        <VictoryAxis
+          dependentAxis
+          // tickFormat specifies how ticks should be displayed
+          tickFormat={(x) => (`$${x / 1000}k`)}
+        />
         <VictoryBar
           data={data}
           // data accessor for x & y values
