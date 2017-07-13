@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import ReactDOM from 'react-dom'
-import * as V from 'victory'
+import { VictoryBar } from 'victory'
 
 const data = [
   { quarter: 1, earnings: 13000 },
@@ -12,9 +12,12 @@ const data = [
 class Main extends Component {
   render () {
     return (
-      <div>
-        <h1>Victory Tutorial</h1>
-      </div>
+     <VictoryBar
+       data={data}
+       // data accessor for x & y values
+       x='quarter'
+       y='earnings'
+      />
     )
   }
 }
